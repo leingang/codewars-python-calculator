@@ -332,6 +332,3 @@ if __name__ == '__main__':
         result = calc(text)
         print(result)
         
-
-    # for test in tests:
-    #     Test.assert_equals(calc(test[0]), test[1])
