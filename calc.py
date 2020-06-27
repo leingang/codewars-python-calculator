@@ -43,10 +43,9 @@ class Lexer(object):
         token_re = "|".join('(?P<%s>%s)' % pair for pair in self.lexemes)
         # See https://stackoverflow.com/a/2359619/297797
         # and https://docs.python.org/3.2/library/re.html#writing-a-tokenizer
-        regex = re.compile(token_re)
         pos = 0
         while True:
-            m = regex.match(text, pos)
+            m = re.compile(token_re).match(text,pos)
             if not m: break
             pos = m.end()
             tokname = m.lastgroup
